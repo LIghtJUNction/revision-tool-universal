@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   push:
-    tags:
+标签:
       - '*'
 name: "Build & Release"
 jobs:
@@ -61,12 +61,15 @@ jobs:
           $hash = Get-FileHash "RevisionTool-Setup.exe" -Algorithm SHA256
           echo "SHA256_HASH=$($hash.Hash)" | Out-File -FilePath $env:GITHUB_ENV -Append
         
-      - name: Release
-        uses: svenstaro/upload-release-action@v2
+          
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
         with:
-          repo_token: ${{ secrets.TOKEN }}
-          file: RevisionTool-Setup.exe
-          asset_name: RevisionTool-Setup.exe
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "SHA256: `${{ env.SHA256_HASH }}`"
+          tag_name: ${{ github.ref }}
+          files: RevisionTool-Setup.exe
+          generate_release_notes: true
+          body: |
+            ### 说明：移除了检测
+            This release includes the following updates:
+            - Updated version: `${{ env.NEW_VERSION }}`
+            - SHA256: `${{ env.SHA256_HASH }}`
