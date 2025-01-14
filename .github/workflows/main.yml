@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   push:
-标签:
+    tag:
       - '*'
 name: "Build & Release"
 jobs:
