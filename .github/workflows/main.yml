@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   push:
-    tag:
+标签:
       - '*'
 name: "Build & Release"
 jobs:
@@ -46,7 +46,6 @@ jobs:
         shell: pwsh
         run: |
           & "${env:ProgramFiles(x86)}\Windows Kits\10\bin\10.0.22621.0\x64\mt.exe" -nologo -manifest common/app.manifest -outputresource:revitool.exe;1
-
       - name: Build revitool GUI
         run: flutter build windows --build-name=${{ env.NEW_VERSION }} --build-number=1 --obfuscate --split-debug-info=/symbols --dart-define=APP_VERSION=${{ env.NEW_VERSION }}
         working-directory: gui
@@ -65,7 +64,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
+          tag_name: ${{ github.ref_name }}
           files: RevisionTool-Setup.exe
           generate_release_notes: true
           body: |
