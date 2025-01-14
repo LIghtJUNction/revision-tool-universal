@@ -18,7 +18,7 @@ class ToolUpdateService {
   );
 
   static const _githubAPI =
-      "https://api.github.com/repos/meetrevision/revision-tool/releases/latest";
+      "https://api.github.com/repos/LIghtJUNction/revision-tool-universal/releases/latest";
 
   static final _tempDir = Directory.systemTemp;
 
