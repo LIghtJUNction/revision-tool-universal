@@ -1,9 +1,9 @@
-
+# Removed the detection and that's it
 
 <img align="left" src="gui/windows/runner/resources/app_icon.ico" width="64" height="64" />
 
 # Revision Tool
-[![Releases](https://img.shields.io/github/v/release/MeetRevision/revision-tool.svg)](https://github.com/MeetRevision/revision-tool/releases)
+[![发布](https://img.shields.io/github/v/release/MeetRevision/revision-tool.svg)](https://github.com/MeetRevision/revision-tool/releases)
 [![License](https://img.shields.io/github/license/MeetRevision/revision-tool.svg)](https://github.com/MeetRevision/revision-tool/blob/main/LICENSE)
 [![Made with Fluent Design](https://img.shields.io/badge/fluent-design-blue?style=flat-square&color=gray&labelColor=0078D7)](https://github.com/bdlukaa/fluent_ui)
 <br>
